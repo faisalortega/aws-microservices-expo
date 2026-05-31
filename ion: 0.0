@@ -1,0 +1,77 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:270062125681:task-definition/employee-microservice:1",
+        "containerDefinitions": [
+            {
+                "name": "employee",
+                "image": "employee",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 8080,
+                        "hostPort": 8080,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [
+                    {
+                        "name": "APP_DB_HOST",
+                        "value": "supplierdb.ceqsj36d5xld.us-east-1.rds.amazonaws.com"
+                    }
+                ],
+                "mountPoints": [],
+                "volumesFrom": [],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "awslogs-capstone",
+                        "awslogs-create-group": "true",
+                        "awslogs-region": "us-east-1",
+                        "awslogs-stream-prefix": "awslogs-capstone"
+                    }
+                },
+                "systemControls": []
+            }
+        ],
+        "family": "employee-microservice",
+        "executionRoleArn": "arn:aws:iam::270062125681:role/PipelineRole",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "MANAGED_INSTANCES",
+            "FARGATE"
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "512",
+        "memory": "1024",
+        "registeredAt": "2026-05-31T05:25:27.308000+00:00",
+        "registeredBy": "arn:aws:sts::270062125681:assumed-role/voclabs/user4217568=faisalortega19@gmail.com"
+    }
+}
