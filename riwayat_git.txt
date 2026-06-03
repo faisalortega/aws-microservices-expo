@@ -1,0 +1,5 @@
+commit 87acd4bafeae57cb6c9056a75af352f46aef383f
+Author: faisalortega <faisalortega19@gmail.com>
+Date:   Sun May 31 05:33:24 2026 +0000
+
+    menambahkan file konfigurasi deployment
